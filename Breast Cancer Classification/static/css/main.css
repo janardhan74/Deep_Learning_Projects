@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1,h4{
+    margin: 10px ;
+}
+
+.content,form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#predict{
+    padding:5px 10px ;
+    margin: 10px auto;
+}

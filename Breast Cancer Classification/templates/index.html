@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel='stylesheet' href={{ url_for('static' ,filename='css/main.css') }}>
+<body>
+    <div class='content'>
+        <h1>Breast Cancer Prediction</h1>
+        {% if prediction!=None %}
+        <h4 style="color:red;" id="predicition_value">{{prediction}}</h4>
+        {% endif %}
+        <form action='/breast_cancer_prediction' method='POST'>
+            <table>
+                {% for feature,val in features_obj %}
+                <tr>
+                    <td><span>{{feature}} : </span></td>
+                    <td><input type="text" name={{feature}} id="{{feature}}" 
+                    {% if val %}
+                    value="{{val}}"
+                    {% endif %}
+                    ></td>
+                </tr>
+                {% endfor %}
+            </table>
+            <input type="submit" value="Predict" id='predict'>
+        </form>
+
+            
+
+    </div>
+</body>
+</html>
